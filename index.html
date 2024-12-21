@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personalized movie recommendations based on user preferences.">
+    <meta name="keywords" content="movies, recommendations, trailers, reviews, user profiles">
+    <title>SpoilerHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="auth-buttons">
+            <button class="get-started">Get Started</button>
+            <button class="google-sign-in" id="google-sign-in-button">Sign in with Google</button>
+            <button class="sign-in" id="sign-in-button">Sign In</button>
+            <button class="sign-out" id="sign-out-button" style="display: none;">Sign Out</button>
+        </nav>
+        <div id="login-section" style="display: none; text-align: center;">
+            <h2>Login</h2>
+            <img src="Group 1.png" alt="SpoilerHub Logo" width="200">
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="error-message" style="color: red;"></div>
+        </div>
+    </header>
+    <main>
+        <section id="user-profile">
+            <h2>User Profile</h2>
+            <form id="profile-form">
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+                <label for="languages">Preferred Languages:</label>
+                <input type="text" id="languages" required>
+                <label for="interests">Cultural Interests:</label>
+                <input type="text" id="interests" required>
+                <label for="genres">Favorite Genres:</label>
+                <input type="text" id="genres" required>
+                <button type="submit">Save Profile</button>
+            </form>
+        </section>
+        <section id="personalized-trailers" class="movie-list">
+            <h2>Your Personalized Trailers</h2>
+            <div class="movies"></div>
+        </section>
+        <section id="movie-options">
+            <h2>Movie Options</h2>
+            <div class="filters">
+                <label for="genre-filter">Genre:</label>
+                <select id="genre-filter">
+                    <option value="">Select Genre</option>
+                    <option value="action">Action</option>
+                    <option value="drama">Drama</option>
+                </select>
+                <label for="rating-filter">Rating:</label>
+                <select id="rating-filter">
+                    <option value="">Select Rating</option>
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                </select>
+                <button id="filter-button">Filter</button>
+            </div>
+            <div class="movie-results"></div>
+        </section>
+        <section id="community">
+            <h2>Community Reviews</h2>
+            <div class="reviews"></div>
+            <form id="review-form">
+                <textarea id="review-text" placeholder="Write your review..." required></textarea>
+                <label for="user-rating">Rating:</label>
+                <select id="user-rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+        <section id="recommendations">
+            <h2>Recommendations</h2>
+            <div class="recommendations-container"></div>
+        </section>
+        <section id="trailer-player" style="display: none;">
+            <h2>Trailer Player</h2>
+            <div class="video-container">
+                <video id="trailer-video" controls>
+                    <source src="trailer.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Frequently Asked Questions</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
